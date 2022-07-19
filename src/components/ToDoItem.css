@@ -2,27 +2,32 @@
     width: 50%;
     margin:auto;
     margin-bottom: 20px;
-    position:relative;
+
+    margin-top:30px;
+}
+
+.flex-container{
+    display:flex;
+    justify-content:space-around;
+    align-items:baseline;
 }
 
 .btn{
     width:80%;
     padding:20px;
-    border-radius:10px;
-    text-align:left;
+    margin:auto;
+    border-radius:25px;
+    background-color:#AA96DA;
+    font-weight:bold;
+    font-size:20px
 }
 
-.edit-icon{
-    position: absolute;
-    right: 30%;
-    top: 20px;
-    cursor: pointer;
+.btn:hover{
+    box-shadow: 5px 5px 5px #888888;
 }
-.delete-icon{
-    position: absolute;
-    right: 15%;
-    top: 20px;
-    cursor: pointer;
+
+i{
+    cursor:pointer;
 }
 
 #hidden{

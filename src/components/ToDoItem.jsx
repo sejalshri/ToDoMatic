@@ -15,10 +15,11 @@ function ToDoItem(props){
             props.item.map((elem,index)=>{
             return(
                     <div className = "button-icon" key={index}>
-                        <button className="btn" style={{textAlign:props.isShowingPending?'left':'center'}}>{elem}</button>
+                        <button className="btn flex-container" style={{textAlign:props.isShowingPending?'left':'center'}}>{elem}
                         <i className="fa fa-pencil-square-o edit-icon" id={`${props.isShowingPending?'notHidden':'hidden'}`} onClick={()=>editItem(elem,index)}></i>
                         <i className="fa fa-trash delete-icon" id={`${props.isShowingPending?'notHidden':'hidden'}`} onClick={()=>deleteItem(elem,index)}></i>
-                    </div>
+                        </button>
+                        </div>
                 )
             })}
         </div>
