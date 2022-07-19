@@ -9,10 +9,11 @@ function App() {
 
     const [pending,setPending]=useState([]);
     const [completed,setCompleted]=useState([]);
-
     const [item,setItem]=useState([]);
+    const[isShowingPending,setIsShowingPending]=useState(true);
 
     const onClickPlusIcon = (enteredData) => {
+        setIsShowingPending(true);
         setPending([...pending,enteredData]);
         setItem([...pending,enteredData]);
     }
@@ -41,10 +42,12 @@ function App() {
     }
 
     const onClickShowPending = ()=>{
+        setIsShowingPending(true);
         setItem([...pending]);
     }
 
     const onClickShowCompleted = ()=>{
+        setIsShowingPending(false);
         setItem([...completed]);
     }
 
@@ -57,11 +60,13 @@ function App() {
             <FilterButtons
                 showPendingTasks = {onClickShowPending}
                 showCompletedTasks = {onClickShowCompleted}
+                isShowingPending = {isShowingPending}
             />
             <ToDoItem
                 item = {item}
                 deleteItem = {onClickDeleteIcon}
                 editItem = {onClickEditIcon}
+                isShowingPending = {isShowingPending}
             />
         </div>
     );

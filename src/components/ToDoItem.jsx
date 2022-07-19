@@ -15,9 +15,9 @@ function ToDoItem(props){
             props.item.map((elem,index)=>{
             return(
                     <div className = "button-icon" key={index}>
-                        <button className="btn">{elem}</button>
-                        <i className="fa fa-pencil-square-o edit-icon" onClick={()=>editItem(elem,index)}></i>
-                        <i className="fa fa-trash delete-icon" onClick={()=>deleteItem(elem,index)}></i>
+                        <button className="btn" style={{textAlign:props.isShowingPending?'left':'center'}}>{elem}</button>
+                        <i className="fa fa-pencil-square-o edit-icon" id={`${props.isShowingPending?'notHidden':'hidden'}`} onClick={()=>editItem(elem,index)}></i>
+                        <i className="fa fa-trash delete-icon" id={`${props.isShowingPending?'notHidden':'hidden'}`} onClick={()=>deleteItem(elem,index)}></i>
                     </div>
                 )
             })}

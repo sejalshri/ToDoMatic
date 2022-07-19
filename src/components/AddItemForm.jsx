@@ -4,11 +4,9 @@ import './AddItemForm.css'
 function AddItemForm(props){
 
     const[data,setData] = useState('');
-    const[item,setItem] = useState([]);
 
     const addItem = () =>{
         if(data!==''){
-            setItem([...item,data]);
             props.saveItem(data);
         }
         setData('');
